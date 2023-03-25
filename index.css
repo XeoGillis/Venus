@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+  font-family: Sans-serif;
+  line-height: 1.5em;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: right;
+}
+
+#save {
+  text-align: center;
+  border: 1px solid #2dafe0;
+  visibility: hidden;
+}
+
+#save:hover {
+  background: #2dafe0;
+}
+
+#nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  overflow: hidden;
+  background: #2dafe0;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 120px;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: linear-gradient(135deg, #2dafe0, white);
+}
+
+.innertube {
+  margin: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+* html body {
+  padding: 0 0 0 120px;
+}
+
+* html main {
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  empty-cells: hide;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  text-align: center;
+}
+
+#analyse {
+  visibility: collapse;
+}
+
+table tr td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  width: 33%;
+}
+
+table thead tr th {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  width: 20%;
+}
+
+table tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  width: 20%;
+}
