@@ -98,6 +98,9 @@ function ButtonClicked(player, contact, value) {
   if (value === -1) results[player][contact][0] += 1;
   else if (value === 0) results[player][contact][1] += 1;
   else if (value === 1) results[player][contact][2] += 1;
+  var id = player.toString() + contact.toString() + value.toString();
+  document.getElementById(id).innerHTML = parseInt(document.getElementById(id).innerHTML) + 1;
+  console.log(id);
 }
 
 function save() {

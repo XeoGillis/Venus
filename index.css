@@ -7,7 +7,6 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-  max-height: 100%;
   font-family: Sans-serif;
   line-height: 1.5em;
   color: white;
@@ -29,12 +28,12 @@ main {
   bottom: 0;
   overflow: auto;
   background: linear-gradient(135deg, #2dafe0, white);
+  height: 100%;
 }
 
 table {
   width: 100%;
   empty-cells: hide;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 table tr td {
@@ -60,6 +59,9 @@ table tbody tr td {
 
 button {
   text-align: center;
+  width: 31%;
+  height: 100%;
+  vertical-align: middle;
 }
 
 * html body {
@@ -111,4 +113,9 @@ button {
 
 #analyse {
   visibility: collapse;
+}
+
+.btninfo {
+  border: none;
+  background-color: #5EC2E7;
 }
