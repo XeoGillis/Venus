@@ -79,6 +79,10 @@ button {
   visibility: hidden;
 }
 
+#newset:hover {
+  background: #2dafe0;
+}
+
 #save:hover {
   background: #2dafe0;
 }
@@ -96,7 +100,7 @@ button {
 
 .innertube {
   margin: 15px;
-  height: 100%;
+  height: 90%;
 }
 
 .innertube div {

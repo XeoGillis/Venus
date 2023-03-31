@@ -48,23 +48,8 @@ let results = [
 function fill(position) {
   if (currentPlayer !== "") {
     document.getElementById(position).innerHTML = currentPlayer;
-    players[position] = currentPlayer;
-    switch (position) {
-      case '1':
-        document.getElementById('player1').innerHTML = currentPlayer;
-      case '2':
-        document.getElementById('player2').innerHTML = currentPlayer;
-      case '3':
-        document.getElementById('player3').innerHTML = currentPlayer;
-      case '4':
-        document.getElementById('player4').innerHTML = currentPlayer;
-      case '5':
-        document.getElementById('player5').innerHTML = currentPlayer;
-      case '6':
-        document.getElementById('player6').innerHTML = currentPlayer;
-      case '7':
-        document.getElementById('player7').innerHTML = currentPlayer;
-    }
+    players[position - 1] = currentPlayer;
+    document.getElementById('player' + position).innerHTML = currentPlayer;
     currentPlayer = "";
   }
 }
