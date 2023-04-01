@@ -96,15 +96,34 @@ function save() {
 }
 
 function helper(index) {
-  var answer = "Opslag: " + helperhelper(index, 0);
-  answer += "Verdediging: " + helperhelper(index, 1);
-  answer += "Pas: " + helperhelper(index, 2);
-  answer += "Aanval: " + helperhelper(index, 3);
+  var answer = helperhelper(index, 0, 'opslag');
+  answer += helperhelper(index, 1, 'verdediging');
+  answer += helperhelper(index, 2, 'pas');
+  answer += helperhelper(index, 3, 'aanval');
   return answer;
 }
 
-function helperhelper(index1, index2) {
-  return "[" + results[index1][index2][0] + ", " + results[index1][index2][1] + ", " + results[index1][index2][2] + "]\n";
+function helperhelper(index1, index2, contact) {
+  var result = "";
+  var i = 0;
+
+  while (i < results[index1][index2][0]) {
+    result += '[' + contact + ', 0]';
+    i++;
+  }
+
+  i = 0;
+  while (i < results[index1][index2][1]) {
+    result += '[' + contact + ', 1]';
+    i++;
+  }
+
+  while (i < results[index1][index2][2]) {
+    result += '[' + contact + ', 2]';
+    i++;
+  }
+
+  return result;
 }
 
 function newset() {
