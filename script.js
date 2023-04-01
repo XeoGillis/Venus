@@ -88,12 +88,11 @@ function ButtonClicked(player, contact, value) {
 }
 
 function save() {
-  var answer = "Resultaten: %0A%0A";
+  var answer = "Resultaten: \n\n";
   for (let i = 0; i < 7; i++)
-    answer += players[i] + "%0A" + helper(i) + "%0A%0A";
+    answer += players[i] + "\n" + helper(i) + "\n\n";
   var blob = new Blob([answer], { type: "text/plain;charset=utf-8" });
   saveAs(blob, "test.txt");
-  window.open(`mailto:xeo.gillis@gmail.com?subject=Venus&body=${answer}`);
 }
 
 function helper(index) {
@@ -105,7 +104,7 @@ function helper(index) {
 }
 
 function helperhelper(index1, index2) {
-  return "[" + results[index1][index2][0] + ", " + results[index1][index2][1] + ", " + results[index1][index2][2] + "]%0A";
+  return "[" + results[index1][index2][0] + ", " + results[index1][index2][1] + ", " + results[index1][index2][2] + "]\n";
 }
 
 function newset() {
