@@ -91,6 +91,8 @@ function save() {
   var answer = "Resultaten: %0A%0A";
   for (let i = 0; i < 7; i++)
     answer += players[i] + "%0A" + helper(i) + "%0A%0A";
+  var blob = new Blob([answer], { type: "text/plain;charset=utf-8" });
+  saveAs(blob, "test.txt");
   window.open(`mailto:xeo.gillis@gmail.com?subject=Venus&body=${answer}`);
 }
 
@@ -113,11 +115,68 @@ function newset() {
 
   for (player in players)
     for (contact in contacts)
-      for (value in values)
-        document.getElementById((player - 1).toString() + contact.toString() + value.toString()).innerHTML = '0';
+      for (value in values) {
+        if (players[player] !== 7 )
+          document.getElementById((players[player] - 1).toString() + contacts[contact].toString() + values[value].toString()).innerHTML = '0';
+        else if (contacts[contact] !== 0)
+          document.getElementById((players[player] - 1).toString() + contacts[contact].toString() + values[value].toString()).innerHTML = '0';
+      }
 
   for (player in players) {
-    document.getElementById(player).innerHTML = player;
-    document.getElementById("player" + player).innerHTML = "speler " + player;
+    if (players[player] === 7) {
+      document.getElementById(players[player]).innerHTML = "libero";
+      document.getElementById("player" + players[player]).innerHTML = "libero";
+    }
+    else {
+      document.getElementById(players[player]).innerHTML = players[player];
+      document.getElementById("player" + players[player]).innerHTML = "positie " + players[player];
+    }
   }
+
+  players = ["", "", "", "", "", "", ""];
+
+  results = [
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ],
+    [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0]
+    ]
+  ];
 }
