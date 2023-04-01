@@ -114,7 +114,7 @@ function newset() {
   for (player in players)
     for (contact in contacts)
       for (value in values)
-        document.getElementById((player - 1).toString() + contact.toString() + value.toString()).innerHTML = 0;
+        document.getElementById((player - 1).toString() + contact.toString() + value.toString()).innerHTML = '0';
 
   for (player in players) {
     document.getElementById(player).innerHTML = player;
