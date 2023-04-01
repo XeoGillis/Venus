@@ -88,11 +88,38 @@ function ButtonClicked(player, contact, value) {
 }
 
 function save() {
-  var answer = "Resultaten: \n\n";
-  for (let i = 0; i < 7; i++)
-    answer += players[i] + "\n" + helper(i) + "\n\n";
-  var blob = new Blob([answer], { type: "text/plain;charset=utf-8" });
+  var playerResult = "Resultaten: \n\n";
+  var groupResult = "Groep: \n\n";
+  for (let i = 0; i < 7; i++) {
+    playerResult += players[i] + "\n" + helperPlayer(i) + "\n" + helper(i) + "\n\n";
+    groupResult += helperGroup[i];
+  }
+  playerResult += "\n\n\n";
+  playerResult += groupResult;
+  var blob = new Blob([playerResult], {
+    type: "text/plain;charset=utf-8"
+  });
   saveAs(blob, "test.txt");
+}
+
+function helperPlayer(index) {
+  var answer = "Opslag: " + helperhelperPlayer(index, 0);
+  answer += "Verdediging: " + helperhelperPlayer(index, 1);
+  answer += "Pas: " + helperhelperPlayer(index, 2);
+  answer += "Aanval: " + helperhelperPlayer(index, 3);
+  return answer;
+}
+
+function helperhelperPlayer(index1, index2) {
+  return "[" + results[index1][index2][0] + ", " + results[index1][index2][1] + ", " + results[index1][index2][2] + "]\n";
+}
+
+function helperGroup(index) {
+  var answer = helperhelperGroup(index, 0, 'opslag');
+  answer += helperhelperGroup(index, 1, 'verdediging');
+  answer += helperhelperGroup(index, 2, 'pas');
+  answer += helperhelperGroup(index, 3, 'aanval');
+  return answer;
 }
 
 function helper(index) {
@@ -103,23 +130,48 @@ function helper(index) {
   return answer;
 }
 
-function helperhelper(index1, index2, contact) {
+function helperhelperGroup(index1, index2, contact) {
   var result = "";
   var i = 0;
 
   while (i < results[index1][index2][0]) {
-    result += '[' + contact + ', 0]';
+    result += '["' + players[index1] + '","' + contact + '", 0],';
     i++;
   }
 
   i = 0;
   while (i < results[index1][index2][1]) {
-    result += '[' + contact + ', 1]';
+    result += '["' + players[index1] + '","' + contact + '", 1],';
     i++;
   }
 
+  i = 0;
   while (i < results[index1][index2][2]) {
-    result += '[' + contact + ', 2]';
+    result += '["' + players[index1] + '","' + contact + '", 2],';
+    i++;
+  }
+
+  return result;
+}
+
+function helperhelper(index1, index2, contact) {
+  var result = "";
+  var i = 0;
+
+  while (i < results[index1][index2][0]) {
+    result += '["' + contact + '", 0],';
+    i++;
+  }
+
+  i = 0;
+  while (i < results[index1][index2][1]) {
+    result += '["' + contact + '", 1],';
+    i++;
+  }
+
+  i = 0;
+  while (i < results[index1][index2][2]) {
+    result += '["' + contact + '", 2],';
     i++;
   }
 
@@ -134,7 +186,7 @@ function newset() {
   for (player in players)
     for (contact in contacts)
       for (value in values) {
-        if (players[player] !== 7 )
+        if (players[player] !== 7)
           document.getElementById((players[player] - 1).toString() + contacts[contact].toString() + values[value].toString()).innerHTML = '0';
         else if (contacts[contact] !== 0)
           document.getElementById((players[player] - 1).toString() + contacts[contact].toString() + values[value].toString()).innerHTML = '0';
@@ -144,8 +196,7 @@ function newset() {
     if (players[player] === 7) {
       document.getElementById(players[player]).innerHTML = "libero";
       document.getElementById("player" + players[player]).innerHTML = "libero";
-    }
-    else {
+    } else {
       document.getElementById(players[player]).innerHTML = players[player];
       document.getElementById("player" + players[player]).innerHTML = "positie " + players[player];
     }

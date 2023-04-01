@@ -1,5 +1,5 @@
 # Venus
 
-todo:
-
-- nieuwe set
+TODO:
+ - README aanvullen
+ - Groepsresultaten bug oplossen
