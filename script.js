@@ -85,7 +85,6 @@ function ButtonClicked(player, contact, value) {
   else if (value === 1) results[player][contact][2] += 1;
   var id = player.toString() + contact.toString() + value.toString();
   document.getElementById(id).innerHTML = parseInt(document.getElementById(id).innerHTML) + 1;
-  console.log(id);
 }
 
 function save() {
@@ -105,4 +104,20 @@ function helper(index) {
 
 function helperhelper(index1, index2) {
   return "[" + results[index1][index2][0] + ", " + results[index1][index2][1] + ", " + results[index1][index2][2] + "]%0A";
+}
+
+function newset() {
+  var players = [1, 2, 3, 4, 5, 6, 7];
+  var contacts = [0, 1, 2, 3];
+  var values = [-1, 0, 1];
+
+  for (player in players)
+    for (contact in contacts)
+      for (value in values)
+        document.getElementById((player - 1).toString() + contact.toString() + value.toString()).innerHTML = 0;
+
+  for (player in players) {
+    document.getElementById(player).innerHTML = player;
+    document.getElementById("player" + player).innerHTML = "speler " + player;
+  }
 }
