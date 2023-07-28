@@ -115,6 +115,18 @@ button {
   font-weight: normal;
 }
 
+.innertube table {
+  height: 100%;
+}
+
+#setup tr {
+  height: 30%;
+}
+
+#analyse tbody tr {
+  height: 15%;
+}
+
 #analyse {
   visibility: collapse;
 }
