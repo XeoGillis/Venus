@@ -116,15 +116,15 @@ button {
 }
 
 .innertube table {
-  height: 100%;
+  height: 90%;
 }
 
 #setup tr {
-  height: 30%;
+  height: 25%;
 }
 
 #analyse tbody tr {
-  height: 15%;
+  height: 10%;
 }
 
 #analyse {
