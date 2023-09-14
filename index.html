@@ -44,7 +44,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="unevenRow">
             <td id="player1"></td>
             <td>
               <button onclick="ButtonClicked(0, 0, -1);">-</button>
@@ -67,7 +67,7 @@
               <button onclick="ButtonClicked(0, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td></td>
             <td>
               <button class="btninfo" id="00-1">0</button>
@@ -90,7 +90,7 @@
               <button class="btninfo" id="031">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td id="player2"></td>
             <td>
               <button onclick="ButtonClicked(1, 0, -1);">-</button>
@@ -113,7 +113,7 @@
               <button onclick="ButtonClicked(1, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td></td>
             <td>
               <button class="btninfo" id="10-1">0</button>
@@ -136,7 +136,7 @@
               <button class="btninfo" id="131">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td id="player3"></td>
             <td>
               <button onclick="ButtonClicked(2, 0, -1);">-</button>
@@ -159,7 +159,7 @@
               <button onclick="ButtonClicked(2, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td></td>
             <td>
               <button class="btninfo" id="20-1">0</button>
@@ -182,7 +182,7 @@
               <button class="btninfo" id="231">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td id="player4"></td>
             <td>
               <button onclick="ButtonClicked(3, 0, -1);">-</button>
@@ -205,7 +205,7 @@
               <button onclick="ButtonClicked(3, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td></td>
             <td>
               <button class="btninfo" id="30-1">0</button>
@@ -228,7 +228,7 @@
               <button class="btninfo" id="331">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td id="player5"></td>
             <td>
               <button onclick="ButtonClicked(4, 0, -1);">-</button>
@@ -251,7 +251,7 @@
               <button onclick="ButtonClicked(4, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td></td>
             <td>
               <button class="btninfo" id="40-1">0</button>
@@ -274,7 +274,7 @@
               <button class="btninfo" id="431">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td id="player6"></td>
             <td>
               <button onclick="ButtonClicked(5, 0, -1);">-</button>
@@ -297,7 +297,7 @@
               <button onclick="ButtonClicked(5, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="evenRow">
             <td></td>
             <td>
               <button class="btninfo" id="50-1">0</button>
@@ -320,7 +320,7 @@
               <button class="btninfo" id="531">0</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td id="player7"></td>
             <td></td>
             <td>
@@ -339,7 +339,7 @@
               <button onclick="ButtonClicked(6, 3, 1);">+</button>
             </td>
           </tr>
-          <tr>
+          <tr id="unevenRow">
             <td></td>
             <td></td>
             <td>
@@ -370,23 +370,19 @@
 
       <h3>Speelsters</h3>
       <div>
-        <!--<h4 onclick="select('Amber');">Amber</h4>
-        <h4 onclick="select('Ella');">Ella</h4>-->
+        <h4 onclick="select('Amber');">Amber</h4>
+        <h4 onclick="select('Ella');">Ella</h4>
         <h4 onclick="select('Emilie');">Emilie</h4>
-        <!--<h4 onclick="select('Floor');">Floor</h4>
-        <h4 onclick="select('Janne');">Janne</h4>-->
+        <h4 onclick="select('Floor');">Floor</h4>
+        <h4 onclick="select('Janne');">Janne</h4>
         <h4 onclick="select('Josefien');">Josefien</h4>
         <h4 onclick="select('Lana');">Lana</h4>
-        <!--<h4 onclick="select('Lina');">Lina</h4>-->
+        <h4 onclick="select('Lina');">Lina</h4>
         <h4 onclick="select('Lisa');">Lisa</h4>
-        <!--<h4 onclick="select('Luka');">Luka</h4>-->
+        <h4 onclick="select('Luka');">Luka</h4>
         <h4 onclick="select('Noa');">Noa</h4>
-        <!--<h4 onclick="select('Paulien');">Paulien</h4>
-        <h4 onclick="select('Roxy');">Roxy</h4>-->
-
-        <h4 onclick="select('Fenne');">Fenne</h4>
-        <h4 onclick="select('Ingske');">Ingske</h4>
-        <h4 onclick="select('Charlotte');">Charlotte</h4>
+        <<h4 onclick="select('Paulien');">Paulien</h4>
+        <h4 onclick="select('Roxy');">Roxy</h4>
       </div>
 
     </div>
