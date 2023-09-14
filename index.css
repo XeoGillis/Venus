@@ -31,6 +31,18 @@ main {
   height: 100%;
 }
 
+#switch {
+  background: #2dafe0;
+}
+
+#uneven {
+  background: #2dafe0;
+}
+
+#even {
+  background: white;
+}
+
 table {
   width: 100%;
   empty-cells: hide;
